@@ -1,2 +1,2 @@
-# nyse-common
-NYSE Common Reusable Components
+# user-management-common
+User Management Common React Components
