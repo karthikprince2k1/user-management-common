@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Multi Select Drop Down Test Suite should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="dropdown"
+  >
+    <div
+      class="dropdown-menu"
+      data-testid="dropdown-menu"
+    >
+      <svg
+        class=""
+        data-testid="arrow-down"
+        height="24"
+        viewBox="0 0 140 140"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"
+            fill="black"
+          />
+        </g>
+      </svg>
+    </div>
+    <ul
+      class="dropdown-list-hidden"
+      data-testid="dropdown-list"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Multi Select Drop Down Test Suite should take a snapshot with options 1`] = `
+<DocumentFragment>
+  <div
+    class="dropdown"
+  >
+    <div
+      class="dropdown-menu"
+      data-testid="dropdown-menu"
+    >
+      <svg
+        class=""
+        data-testid="arrow-down"
+        height="24"
+        viewBox="0 0 140 140"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"
+            fill="black"
+          />
+        </g>
+      </svg>
+    </div>
+    <ul
+      class="dropdown-list-hidden"
+      data-testid="dropdown-list"
+    >
+      <li
+        data-testid="dropdown-list-item"
+        value="option1"
+      >
+        option1
+      </li>
+      <li
+        data-testid="dropdown-list-item"
+        value="option2"
+      >
+        option2
+      </li>
+      <li
+        data-testid="dropdown-list-item"
+        value="option 3"
+      >
+        option 3
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

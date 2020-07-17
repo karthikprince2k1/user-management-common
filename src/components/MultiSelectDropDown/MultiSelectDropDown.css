@@ -24,7 +24,7 @@
   box-sizing: border-box;
 }
 
-.dropdown-seleced-items {
+.dropdown-selected-item {
   margin-left: 0px;
   margin-right: 3px;
   background-color: #0096fb;
@@ -33,7 +33,7 @@
   text-align: center;
   padding: 3px 5px;
 }
-.dropdown-seleced-items:hover {
+.dropdown-selected-item:hover {
   cursor: pointer;
 }
 

@@ -31,14 +31,23 @@ function MultiSelectDropDown(props) {
 
   return (
     <div className="dropdown" ref={wrapperRef}>
-      <div className="dropdown-menu" onClick={handleClick}>
-        {selectedItems.map((item) => {
+      <div
+        className="dropdown-menu"
+        onClick={handleClick}
+        data-testid="dropdown-menu"
+      >
+        {selectedItems.map((item, i) => {
           return (
-            <span className="dropdown-seleced-items">
+            <span
+              className="dropdown-selected-item"
+              data-testid="dropdown-selected-item"
+              key={item + i}
+            >
               {item}{" "}
               <span
                 className="close"
                 onClick={() => handleRemoveItem(item)}
+                data-testid="remove-item"
               ></span>
             </span>
           );
@@ -49,6 +58,7 @@ function MultiSelectDropDown(props) {
           height="24"
           xmlns="http://www.w3.org/2000/svg"
           className={clicked ? "rotate" : ""}
+          data-testid="arrow-down"
         >
           <g>
             <path
@@ -61,14 +71,21 @@ function MultiSelectDropDown(props) {
 
       <ul
         className={clicked ? "dropdown-list-visible" : "dropdown-list-hidden"}
+        data-testid="dropdown-list"
       >
-        {props.options.map((option) => {
-          return (
-            <li value={option} onClick={() => handleListItemClick(option)}>
-              {option}
-            </li>
-          );
-        })}
+        {props.options &&
+          props.options.map((option, i) => {
+            return (
+              <li
+                value={option}
+                onClick={() => handleListItemClick(option)}
+                key={option + i}
+                data-testid="dropdown-list-item"
+              >
+                {option}
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
