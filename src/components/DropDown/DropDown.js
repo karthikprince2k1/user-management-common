@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 
-function DropDownMenu(props) {
-  const [selectedItem, setSelectedItem] = useState("");
-  const handleChange = function (event) {
-    console.log("selected", event.target.value);
-    setSelectedItem(event.target.value);
-  };
-
-  return (
-    <select onChange={handleChange}>
-      {props.items.map((item) => {
-        return <option value={item}>{item}</option>;
-      })}
+const DropDown = React.forwardRef(({ label, options, register }, ref) => (
+  <>
+    <label>{label}</label>
+    <select name={label} ref={ref}>
+      {options &&
+        options.map((opt) => {
+          return <option value={opt}>{opt}</option>;
+        })}
     </select>
-  );
-}
-
+  </>
+));
 export default DropDownMenu;
