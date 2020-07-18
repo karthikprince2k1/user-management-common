@@ -1,8 +1,8 @@
 import React from "react";
-const Input = ({ label, register, required }) => (
+const Input = ({ label, name, register, required }) => (
   <>
     <label>{label}</label>
-    <input name={label} ref={register({ required })} />
+    <input name={name} ref={register({ required })} type="text" />
   </>
 );
 
