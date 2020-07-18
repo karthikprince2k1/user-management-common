@@ -5,3 +5,5 @@ const Input = ({ label, register, required }) => (
     <input name={label} ref={register({ required })} />
   </>
 );
+
+export default Input;

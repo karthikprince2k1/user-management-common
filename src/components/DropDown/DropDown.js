@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const DropDown = React.forwardRef(({ label, options, register }, ref) => (
   <>
@@ -11,4 +11,4 @@ const DropDown = React.forwardRef(({ label, options, register }, ref) => (
     </select>
   </>
 ));
-export default DropDownMenu;
+export default DropDown;
