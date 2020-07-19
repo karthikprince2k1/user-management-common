@@ -5,8 +5,12 @@ const DropDown = React.forwardRef(({ label, name, options, register }, ref) => (
     <label>{label}</label>
     <select name={name} ref={ref}>
       {options &&
-        options.map((opt) => {
-          return <option value={opt}>{opt}</option>;
+        options.map((opt, i) => {
+          return (
+            <option value={opt} key={i}>
+              {opt}
+            </option>
+          );
         })}
     </select>
   </>
