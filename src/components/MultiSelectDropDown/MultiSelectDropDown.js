@@ -5,6 +5,7 @@ function MultiSelectDropDown(props) {
   const [clicked, setClicked] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const wrapperRef = useRef(null);
+  const { register, setValue, name } = props;
   const handleClick = function (e) {
     setClicked(!clicked);
   };
@@ -15,14 +16,18 @@ function MultiSelectDropDown(props) {
   };
 
   const handleListItemClick = function (option) {
-    if (!selectedItems.includes(option))
-      setSelectedItems([...selectedItems, option]);
+    if (!selectedItems.includes(option)) {
+      const selItems = [...selectedItems, option];
+      setSelectedItems(selItems);
+      setValue && setValue(props.name, selItems.join(","));
+    }
   };
 
   const handleRemoveItem = function (option) {
     setSelectedItems(selectedItems.filter((item) => item !== option));
   };
   useEffect(() => {
+    register && register({ name: name, type: "custom" }, { required: true });
     document.addEventListener("click", handleOutsideClick);
     return () => {
       document.removeEventListener("click", handleOutsideClick);
