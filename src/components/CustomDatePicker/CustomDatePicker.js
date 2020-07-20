@@ -1,13 +1,21 @@
 import React, { forwardRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+const getFormattedDate = (strDate) => {
+  if (!strDate) return "";
+  // converts date in YYYY-MM-DD format to Date
+  const dateArr = strDate.split("-");
+  const year = parseInt(dateArr[0], 10);
+  const month = parseInt(dateArr[1], 10);
+  const day = parseInt(dateArr[2], 10);
+  return `${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`;
+};
 const CustomDatePicker = forwardRef((props, ref) => {
   const [startDate, setStartDate] = useState(null);
   const CustomDateInput = forwardRef((props, ref) => (
     <input
       onClick={props.onClick}
-      value={props.value}
+      value={props.value || getFormattedDate(props.defaultValue)}
       onChange={props.onClick}
       ref={props.register}
       name={props.internalName}
@@ -23,6 +31,7 @@ const CustomDatePicker = forwardRef((props, ref) => {
           <CustomDateInput
             internalName={props.name}
             register={props.register}
+            defaultValue={props.defaultValue}
           />
         }
       />
