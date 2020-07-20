@@ -33,6 +33,17 @@ function MultiSelectDropDown(props) {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, []);
+  useEffect(() => {
+    if (props.defaultValue) {
+      const arr = props.defaultValue.split(";").map((i) => {
+        let item = i.trim();
+        return item.charAt(0).toUpperCase() + item.slice(1);
+      });
+      const selItems = [...selectedItems, ...arr];
+      setSelectedItems(selItems);
+      setValue && setValue(props.name, selItems.join(","));
+    }
+  }, [props.defaultValue]);
 
   return (
     <div className="dropdown" ref={wrapperRef}>
