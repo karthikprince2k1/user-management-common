@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const CustomDatePicker = forwardRef((props, ref) => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(null);
   const CustomDateInput = forwardRef((props, ref) => (
     <input
       onClick={props.onClick}
