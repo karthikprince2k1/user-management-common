@@ -24,7 +24,9 @@ function MultiSelectDropDown(props) {
   };
 
   const handleRemoveItem = function (option) {
-    setSelectedItems(selectedItems.filter((item) => item !== option));
+    const filterdItems = selectedItems.filter((item) => item !== option);
+    setSelectedItems(filterdItems);
+    setValue && setValue(props.name, filterdItems.join(","));
   };
   useEffect(() => {
     register && register({ name: name, type: "custom" }, { required: true });
