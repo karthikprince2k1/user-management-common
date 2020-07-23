@@ -5,6 +5,7 @@ export const Checkbox = ({
   name,
   checked = false,
   onChange,
+  defaultChecked,
 }) => {
   console.log("Checkbox: ", name, checked);
 
@@ -14,26 +15,33 @@ export const Checkbox = ({
 };
 
 export const CheckBoxes = (props) => {
-  const [checkedItems, setCheckedItems] = useState({});
+  const initialState = {};
+  if (props.defaultChecked) {
+    props.checkboxes.map((item) => (initialState[item.name] = true));
+  }
+
+  const [checkedItems, setCheckedItems] = useState(initialState);
 
   const handleChange = (event) => {
-    setCheckedItems({
+    const newState = {
       ...checkedItems,
       [event.target.name]: event.target.checked,
-    });
-    console.log("checkedItems: ", checkedItems);
+    };
+    setCheckedItems(newState);
+    props.handleCheckBoxes && props.handleCheckBoxes(newState);
+    console.log("checkedItems: ", newState);
   };
   return (
     <div>
       {props.checkboxes &&
         props.checkboxes.map((item) => (
           <label key={item.key}>
-            {item.name}
             <Checkbox
               name={item.name}
               checked={checkedItems[item.name]}
               onChange={handleChange}
             />
+            {item.label}
           </label>
         ))}
     </div>
